@@ -502,7 +502,7 @@ const initPortfolio = () => {
       tag: 'Fullstack',
       category: 'fullstack',
       description: 'An AI-powered assistant for managing and automating fur care services.',
-      image: 'images/projects/furcare.png'
+      image: 'images/projects/furcare.PNG'
     },
     {
       title: 'Leaf Book Review System',
@@ -967,37 +967,62 @@ if (document.readyState === 'loading') {
 const contactForm = document.getElementById("contact-form");
 const feedback = document.getElementById("form-feedback");
 
-contactForm.addEventListener("submit", async (e) => {
+if (contactForm && feedback) {
+  contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !message) {
+      feedback.textContent = "Please fill in all fields before sending.";
+      return;
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      feedback.textContent = "Please enter a valid email address.";
+      return;
+    }
 
     feedback.textContent = "Sending...";
 
-    const formData = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        message: document.getElementById("message").value,
-    };
+    const formData = { name, email, message };
 
     try {
-        const response = await fetch("/api/contact", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formData),
-        });
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-        const result = await response.json();
+      const result = await response.json().catch(() => ({}));
 
-        if (response.ok) {
-            feedback.textContent = "✅ Message sent successfully!";
-            contactForm.reset();
-        } else {
-            feedback.textContent = "❌ Failed to send message.";
-            console.error(result);
-        }
+      if (response.ok) {
+        feedback.textContent = "✅ Message sent successfully!";
+        contactForm.reset();
+        return;
+      }
+
+      if (response.status === 404 || response.status === 500 || response.status === 503) {
+        const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+        window.location.href = `mailto:cosamarra30@email.com?subject=${subject}&body=${body}`;
+        feedback.textContent = "📧 Your email app should open with your message. Please send it from there.";
+        return;
+      }
+
+      feedback.textContent = result.message || "❌ Failed to send message. Please try again later.";
+      console.error(result);
     } catch (error) {
-        feedback.textContent = "❌ Something went wrong.";
-        console.error(error);
+      const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+      window.location.href = `mailto:cosamarra30@email.com?subject=${subject}&body=${body}`;
+      feedback.textContent = "📧 Your email app should open with your message. Please send it from there.";
+      console.error(error);
     }
-});
+  });
+}
