@@ -1,6 +1,7 @@
 import { Resend } from "resend";
 
-const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
+const resendApiKey = process.env.RESEND_API_KEY?.trim();
+const resend = resendApiKey ? new Resend(resendApiKey) : null;
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -19,7 +20,7 @@ export default async function handler(req, res) {
   }
 
   if (!resend) {
-    return res.status(503).json({ success: false, message: "Email service is not configured yet." });
+    return res.status(503).json({ success: false, message: "Email service is not configured yet. Set RESEND_API_KEY in Vercel." });
   }
 
   try {
@@ -38,7 +39,8 @@ export default async function handler(req, res) {
 
     return res.status(200).json({ success: true });
   } catch (error) {
-    console.error(error);
-    return res.status(500).json({ success: false, message: "Unable to send the message right now." });
+    console.error("Resend error:", error);
+    const errorMessage = error instanceof Error ? error.message : "Unable to send the message right now.";
+    return res.status(500).json({ success: false, message: errorMessage });
   }
 }
