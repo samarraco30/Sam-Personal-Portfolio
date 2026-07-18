@@ -985,3 +985,42 @@ if (document.readyState === 'loading') {
 } else {
   initPortfolio();
 }
+
+
+const contactForm = document.getElementById("contact-form");
+const feedback = document.getElementById("form-feedback");
+
+contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    feedback.textContent = "Sending...";
+
+    const formData = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value,
+    };
+
+    try {
+        const response = await fetch("/api/contact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            feedback.textContent = "✅ Message sent successfully!";
+            contactForm.reset();
+        } else {
+            feedback.textContent = "❌ Failed to send message.";
+            console.error(result);
+        }
+    } catch (error) {
+        feedback.textContent = "❌ Something went wrong.";
+        console.error(error);
+    }
+});
