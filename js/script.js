@@ -687,29 +687,6 @@ const initPortfolio = () => {
   })();
 
   // ==========================================
-  // 11. Contact Form — lightweight client-side validation
-  // ==========================================
-  const form = document.getElementById('contact-form');
-  const feedback = document.getElementById('form-feedback');
-
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      if (!form.checkValidity()) {
-        feedback.style.color = '#d97757';
-        feedback.textContent = 'Please fill in your name, a valid email, and a message before sending.';
-        form.reportValidity();
-        return;
-      }
-
-      feedback.style.color = 'var(--matcha-mist)';
-      feedback.textContent = 'Thank you! Your message was sent successfully.';
-      form.reset();
-    });
-  }
-
-  // ==========================================
   // 12. Mini Arcade — Flappy-style plane game
   // ==========================================
   const canvas = document.getElementById('gameCanvas');
