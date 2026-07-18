@@ -11,7 +11,7 @@ export default async function handler(req, res) {
 
   try {
     await resend.emails.send({
-     from: "Portfolio <noreply@yourdomain.com>", // Replace later with your verified domain
+     from: "Portfolio <onboarding@resend.dev>",
       to: "cosamarra30@email.com",
       subject: `New Portfolio Inquiry from ${name}`,
       html: `
