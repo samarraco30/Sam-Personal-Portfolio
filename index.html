@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Maria Samarra Co — 4th-year BS Computer Science student. Fullstack developer building web apps, IoT systems, and clean, user-friendly software.">
+  <title>Maria Samarra Co | Computer Science Student &amp; Developer</title>
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <!-- Skip link for keyboard / screen-reader users -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Preloader -->
+  <div id="preloader" role="status" aria-live="polite">
+    <div class="loader">
+      <div class="spinner" aria-hidden="true"></div>
+      <p>Loading experience…</p>
+    </div>
+  </div>
+
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Primary">
+    <div class="nav-container">
+      <a href="#home" class="logo">PORTFOLIO<span>.</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#game">Mini-Game</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="theme-toggle" type="button" aria-label="Switch to light theme">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
+        <button class="menu-toggle" id="mobile-menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+  <!-- Hero Section -->
+  <header id="home" class="hero-section">
+    <div class="hero-bg-blobs" aria-hidden="true">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+    <div class="hero-container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <span class="subtitle reveal">Welcome to my portfolio</span>
+          <h1 class="reveal reveal-delay-1">Hi, I'm <span class="hero-name">Maria Samarra Co</span></h1>
+          <p class="hero-role reveal reveal-delay-2">
+            <span class="txt-type" data-wait="2200" data-words='["Fullstack Developer", "CS Student", "Problem Solver", "IoT Builder"]'></span>
+          </p>
+          <p class="hero-desc reveal reveal-delay-2">
+            A fourth-year <b>BS Computer Science</b> student who designs and ships full-stack web
+            and IoT systems &mdash; from database-backed dashboards to real-time device integrations.
+          </p>
+          <div class="hero-stack reveal reveal-delay-3" aria-label="Primary technologies">
+            <span class="stack-chip"><i class="fa-brands fa-react" aria-hidden="true"></i> React</span>
+            <span class="stack-chip"><i class="fa-brands fa-node-js" aria-hidden="true"></i> Node.js</span>
+            <span class="stack-chip"><i class="fa-brands fa-php" aria-hidden="true"></i> Laravel</span>
+            <span class="stack-chip"><i class="fa-solid fa-database" aria-hidden="true"></i> SQL / MongoDB</span>
+          </div>
+          <div class="hero-buttons reveal reveal-delay-3">
+            <a href="#projects" class="btn btn-primary">View my work</a>
+            <a href="#contact" class="btn btn-secondary">Let's connect <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal reveal-right reveal-delay-2" aria-hidden="true">
+          <div class="code-card">
+            <div class="code-card-header">
+              <span class="code-dot dot-red"></span>
+              <span class="code-dot dot-yellow"></span>
+              <span class="code-dot dot-green"></span>
+              <span class="code-card-title">profile.json</span>
+            </div>
+            <pre class="code-card-body"><code>{
+  <span class="tok-key">"name"</span>: <span class="tok-str">"Maria Samarra Co"</span>,
+  <span class="tok-key">"year"</span>: <span class="tok-str">"4th Year BSCS"</span>,
+  <span class="tok-key">"stack"</span>: [
+    <span class="tok-str">"React"</span>, <span class="tok-str">"Laravel"</span>,
+    <span class="tok-str">"Node.js"</span>, <span class="tok-str">"MongoDB"</span>
+  ],
+  <span class="tok-key">"status"</span>: <span class="tok-str">"open_to_work"</span>
+}</code></pre>
+            <div class="code-card-status">
+              <span class="status-dot"></span>
+              Available for internships
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#about" class="scroll-cue" aria-label="Scroll to About section">
+      <span></span>
+    </a>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="about-section section-padding">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>About Me</h2>
+        <div class="line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-img-container reveal reveal-left">
+          <img src="images/profile.jpg" alt="Portrait of Maria Samarra Co" class="about-img" onerror="this.closest('.about-img-container').classList.add('media-error')">
+          <div class="media-fallback"><i class="fas fa-user" aria-hidden="true"></i><span>Add profile.jpg</span></div>
+        </div>
+        <div class="about-text reveal reveal-right">
+          <h3>Passionate Developer &amp; Creator</h3>
+          <p>I focus on bridging solid back-end architecture with fluid, interactive user interfaces. By keeping workflows visual and structure clean, I build products that are easy to navigate and simple to understand at a glance.</p>
+          <div class="personal-info">
+            <div class="info-item"><strong>Location</strong> Santa Maria, Bulacan</div>
+            <div class="info-item"><strong>Availability</strong> Open to opportunities</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills-section section-padding">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>My Toolset</h2>
+        <div class="line"></div>
+      </div>
+      <div class="skills-grid">
+        <div class="skills-container reveal">
+          <div class="skill-group">
+            <div class="skill-info">
+              <span>React / Node.js</span>
+              <span class="skill-val">90%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-progress" data-width="90%" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="React / Node.js proficiency"></div></div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-info">
+              <span>C++ / Python / Java</span>
+              <span class="skill-val">85%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-progress" data-width="85%" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="C++, Python, Java proficiency"></div></div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-info">
+              <span>PHP and Laravel</span>
+              <span class="skill-val">95%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-progress" data-width="95%" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="PHP and Laravel proficiency"></div></div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-info">
+              <span>Database Systems (SQL &amp; MongoDB)</span>
+              <span class="skill-val">80%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-progress" data-width="80%" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="Database systems proficiency"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificates Section -->
+  <section id="certificates" class="certificates-section section-padding">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Certificates</h2>
+        <p class="section-subtitle">Courses and credentials I've completed along the way.</p>
+        <div class="line"></div>
+      </div>
+
+      <div class="netflix-carousel-wrapper reveal">
+        <div class="netflix-carousel" id="certificatesCarousel" role="region" aria-label="Certificate carousel, scrollable">
+          <div class="carousel-track" id="carouselTrack">
+            <!-- Certificate cards populated dynamically -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificate Modal -->
+  <div class="certificate-modal" id="certificateModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="certificateModalTitle">
+    <div class="certificate-modal-backdrop"></div>
+    <div class="certificate-modal-panel">
+      <button class="modal-close" id="modalCloseBtn" type="button" aria-label="Close certificate viewer"><i class="fas fa-xmark" aria-hidden="true"></i></button>
+
+      <div class="modal-image-frame">
+        <img id="modalCertImage" src="" alt="" onerror="this.closest('.modal-image-frame').classList.add('media-error')">
+        <div class="media-fallback"><i class="fas fa-image" aria-hidden="true"></i><span>Add certificate image</span></div>
+      </div>
+
+      <div class="modal-visual">
+        <span class="cert-year" id="certificateModalYear"></span>
+        <h3 id="certificateModalTitle"></h3>
+        <p id="certificateModalText"></p>
+      </div>
+
+      <div class="modal-footer">
+        <button id="prevCertBtn" class="modal-nav-btn" type="button" aria-label="Previous certificate">
+          <i class="fas fa-arrow-left" aria-hidden="true"></i><span>Back</span>
+        </button>
+        <span class="modal-counter" id="certificateModalCounter">1 / 1</span>
+        <button id="nextCertBtn" class="modal-nav-btn" type="button" aria-label="Next certificate">
+          <span>Next</span><i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Modal -->
+  <div class="project-modal" id="projectModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
+    <div class="project-modal-backdrop"></div>
+    <div class="project-modal-panel">
+      <button class="modal-close" id="projectModalCloseBtn" type="button" aria-label="Close project viewer"><i class="fas fa-xmark" aria-hidden="true"></i></button>
+
+      <div class="modal-image-frame">
+        <img id="modalProjectImage" src="" alt="" onerror="this.closest('.modal-image-frame').classList.add('media-error')">
+        <div class="media-fallback"><i class="fas fa-image" aria-hidden="true"></i><span>Add project image</span></div>
+      </div>
+
+      <div class="modal-visual">
+        <span class="project-tag" id="projectModalTag"></span>
+        <h3 id="projectModalTitle"></h3>
+        <p id="projectModalDescription"></p>
+      </div>
+
+      <div class="modal-footer">
+        <button id="prevProjectBtn" class="modal-nav-btn" type="button" aria-label="Previous project">
+          <i class="fas fa-arrow-left" aria-hidden="true"></i><span>Back</span>
+        </button>
+        <span class="modal-counter" id="projectModalCounter">1 / 1</span>
+        <button id="nextProjectBtn" class="modal-nav-btn" type="button" aria-label="Next project">
+          <span>Next</span><i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects-section section-padding">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Featured Work</h2>
+        <p class="section-subtitle">A selection of systems and interfaces I've designed and built.</p>
+        <div class="line"></div>
+      </div>
+
+      <div class="filter-buttons reveal" role="group" aria-label="Filter projects by category">
+        <button class="filter-btn active" data-filter="all" type="button">All</button>
+        <button class="filter-btn" data-filter="fullstack" type="button">Fullstack</button>
+        <button class="filter-btn" data-filter="iot" type="button">Internet of Things (IoT)</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid"></div>
+
+      <div class="projects-actions">
+        <button id="viewMoreProjectsBtn" class="btn btn-secondary" type="button">
+          <span>View more projects</span>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience/Education Timeline Section -->
+  <section id="experience" class="experience-section section-padding">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Journey Timeline</h2>
+        <div class="line"></div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2026 &ndash; Present</div>
+          <div class="timeline-content">
+            <h3>4th Year Computer Science Student</h3>
+            <p>
+              Currently pursuing a Bachelor of Science in Computer Science while
+              expanding my skills in software development, web technologies,
+              database systems, and artificial intelligence. Continuously building
+              personal and academic projects to strengthen practical experience.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2023 &ndash; 2026</div>
+          <div class="timeline-content">
+            <h3>Computer Science Undergraduate</h3>
+            <p>
+              Built a strong foundation in programming, object-oriented design,
+              data structures, algorithms, and software engineering. Developed
+              several academic and personal projects using modern web technologies.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mini Game Section -->
+  <section id="game" class="game-section section-padding">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Mini Arcade</h2>
+        <p class="section-subtitle">Take a break! Press Play, then click, tap, or press Space to fly.</p>
+        <div class="line"></div>
+      </div>
+      <div class="game-wrapper reveal">
+        <div class="game-ui">
+          <span id="game-score">Score: 0</span>
+          <span id="game-high-score">High Score: 0</span>
+        </div>
+        <div class="game-canvas-frame">
+          <canvas id="gameCanvas" width="480" height="320" tabindex="0" role="img" aria-label="Flappy plane arcade game canvas"></canvas>
+        </div>
+        <button id="game-btn" class="btn btn-primary" type="button">Play</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section section-padding">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Let's Connect</h2>
+        <div class="line"></div>
+        <p>
+          I'm currently a fourth-year BSCS student seeking internship
+          and entry-level opportunities in software and web development.
+          If you'd like to discuss a project, collaboration, or career
+          opportunity, I'd be happy to hear from you.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal reveal-left">
+          <a class="contact-link" href="mailto:cosamarra30@email.com"><i class="fas fa-envelope" aria-hidden="true"></i><span><strong>Email</strong>cosamarra30@email.com</span></a>
+          <a class="contact-link" href="https://github.com/samarraco30" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i><span><strong>GitHub</strong>github.com/samarraco30</span></a>
+          <a class="contact-link" href="https://linkedin.com/in/maria-samarra-co" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin" aria-hidden="true"></i><span><strong>LinkedIn</strong>linkedin.com/in/maria-samarra-co</span></a>
+        </div>
+
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="form-group">
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name" required placeholder="Jane Dela Cruz" autocomplete="name">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" required placeholder="jane@email.com" autocomplete="email">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project or opportunity..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Send inquiry</button>
+
+          <div id="form-feedback" class="form-feedback" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+
+      <p class="contact-note">I'll do my best to respond within 24&ndash;48 hours.</p>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="#home" class="logo">PORTFOLIO<span>.</span></a>
+        <p>&copy; 2026 Maria Samarra Co. All rights reserved.</p>
+        <div class="social-icons">
+          <a href="https://github.com/samarraco30" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+          <a href="https://linkedin.com/in/maria-samarra-co" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+          <a href="mailto:cosamarra30@email.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scroll-top" type="button" aria-label="Scroll to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
+
+  <script src="./js/script.js" defer></script>
+</body>
+</html>
