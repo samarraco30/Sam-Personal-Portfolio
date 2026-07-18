@@ -507,21 +507,21 @@ const initPortfolio = () => {
       tag: 'Fullstack',
       category: 'fullstack',
       description: 'A system for reviewing and rating books with a focus on user engagement and community interaction.',
-      image: 'images/projects/leaf.png'
+      image: 'images/projects/leaf.PNG'
     },
     {
       title: 'RFID Door Access Control System',
       tag: 'Internet of Things (IoT)',
       category: 'iot',
       description: 'A system for controlling door access using RFID technology that records access logs and provides real-time monitoring.',
-      image: 'images/projects/rfid.png'
+      image: 'images/projects/rfid.PNG'
     },
     {
       title: 'Choi - Co - Lates Inventory',
       tag: 'Fullstack',
       category: 'fullstack',
       description: 'A system for managing and tracking inventory with real-time updates and reporting capabilities.',
-      image: 'images/projects/choi-co-lates.png'
+      image: 'images/projects/choi-co-lates.PNG'
     },
     {
       title: 'Techbee Accounting System',
