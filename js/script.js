@@ -502,7 +502,7 @@ const initPortfolio = () => {
       tag: 'Fullstack',
       category: 'fullstack',
       description: 'An AI-powered assistant for managing and automating fur care services.',
-      image: 'images/projects/furcare.PNG'
+      image: 'images/projects/furcare.png'
     },
     {
       title: 'Leaf Book Review System',
