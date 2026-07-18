@@ -973,17 +973,22 @@ if (contactForm && feedback) {
     const email = document.getElementById("email").value.trim();
     const message = document.getElementById("message").value.trim();
 
+    feedback.classList.remove('is-success', 'is-error', 'is-loading');
+
     if (!name || !email || !message) {
+      feedback.classList.add('is-error');
       feedback.textContent = "Please fill in all fields before sending.";
       return;
     }
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(email)) {
+      feedback.classList.add('is-error');
       feedback.textContent = "Please enter a valid email address.";
       return;
     }
 
+    feedback.classList.add('is-loading');
     feedback.textContent = "Sending...";
 
     const formData = { name, email, message };
@@ -1003,6 +1008,8 @@ if (contactForm && feedback) {
         : await response.text().catch(() => "");
 
       if (response.ok) {
+        feedback.classList.remove('is-loading', 'is-error');
+        feedback.classList.add('is-success');
         feedback.textContent = "✅ Message sent successfully!";
         contactForm.reset();
         return;
@@ -1014,9 +1021,13 @@ if (contactForm && feedback) {
           ? result
           : `Request failed with status ${response.status}`;
 
+      feedback.classList.remove('is-loading', 'is-success');
+      feedback.classList.add('is-error');
       feedback.textContent = `❌ ${errorMessage}`;
       console.error(result);
     } catch (error) {
+      feedback.classList.remove('is-loading', 'is-success');
+      feedback.classList.add('is-error');
       feedback.textContent = `❌ ${error instanceof Error ? error.message : "Unable to send the message right now."}`;
       console.error(error);
     }
