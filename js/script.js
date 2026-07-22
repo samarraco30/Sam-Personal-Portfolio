@@ -507,21 +507,21 @@ const initPortfolio = () => {
       tag: 'Fullstack',
       category: 'fullstack',
       description: 'A system for reviewing and rating books with a focus on user engagement and community interaction.',
-      image: 'images/projects/leaf.PNG'
+      image: 'images/projects/leaf.png'
     },
     {
       title: 'RFID Door Access Control System',
       tag: 'Internet of Things (IoT)',
       category: 'iot',
       description: 'A system for controlling door access using RFID technology that records access logs and provides real-time monitoring.',
-      image: 'images/projects/rfid.PNG'
+      image: 'images/projects/rfid.png'
     },
     {
       title: 'Choi - Co - Lates Inventory',
       tag: 'Fullstack',
       category: 'fullstack',
       description: 'A system for managing and tracking inventory with real-time updates and reporting capabilities.',
-      image: 'images/projects/choi-co-lates.PNG'
+      image: 'images/projects/choi-co-lates.png'
     },
     {
       title: 'Techbee Accounting System',
@@ -706,11 +706,11 @@ const initPortfolio = () => {
   // (see --game-sky / --game-pipe in style.css) so the obstacles can never
   // end up the same color as the background, in either site theme.
   let gameColors = {
-    sky: '#10321f',
-    skyAlt: '#0c2718',
-    ground: '#0a1d12',
-    pipe: '#e8b978',
-    pipeDark: '#b5762a',
+    sky: '#241a12',
+    skyAlt: '#180f0a',
+    ground: '#120c08',
+    pipe: '#f2711f',
+    pipeDark: '#a9490f',
     bird: '#ffffff'
   };
 
