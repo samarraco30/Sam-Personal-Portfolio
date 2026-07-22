@@ -2,16 +2,16 @@
    Color Palette & Design Tokens
 ========================================================= */
 :root {
-  --dusty-coal: #17181a;
-  --matcha-mist: #bfe0c4;
-  --matcha-mist-strong: #9fd0a8;
-  --amber-spark: #e8b978;
-  --dark-accent: #2a312c;
-  --card-bg: #1f2022;
-  --card-bg-raised: #242527;
+  --dusty-coal: #121212;
+  --matcha-mist: #f2711f;
+  --matcha-mist-strong: #d9600f;
+  --amber-spark: #ffb347;
+  --dark-accent: #2a2320;
+  --card-bg: #1a1a1a;
+  --card-bg-raised: #202020;
   --text-primary: #f5f6f4;
-  --text-secondary: #a9adb0;
-  --accent-glow: rgba(191, 224, 196, 0.16);
+  --text-secondary: #a3a3a3;
+  --accent-glow: rgba(242, 113, 31, 0.18);
   --border-color: rgba(255, 255, 255, 0.08);
   --border-color-strong: rgba(255, 255, 255, 0.16);
 
@@ -30,40 +30,40 @@
 
   /* Mini Arcade — kept separate from --dark-accent so the sky and the
      obstacles can never accidentally end up the same color. */
-  --game-sky: #10321f;
-  --game-sky-alt: #0c2718;
-  --game-pipe: #e8b978;
-  --game-pipe-dark: #b5762a;
+  --game-sky: #241a12;
+  --game-sky-alt: #180f0a;
+  --game-pipe: #f2711f;
+  --game-pipe-dark: #a9490f;
   --game-bird: #ffffff;
-  --game-ground: #0a1d12;
+  --game-ground: #120c08;
 
   /* Ambient page background — soft, low-opacity so it never fights text */
-  --aurora-1: rgba(191, 224, 196, 0.20);
-  --aurora-2: rgba(232, 185, 120, 0.14);
-  --aurora-3: rgba(63, 106, 73, 0.22);
+  --aurora-1: rgba(242, 113, 31, 0.20);
+  --aurora-2: rgba(255, 179, 71, 0.14);
+  --aurora-3: rgba(90, 45, 20, 0.22);
 }
 
 /* Light Theme Variables */
 [data-theme="light"] {
-  --dusty-coal: #f6f8f6;
-  --matcha-mist: #3f6a49;
-  --matcha-mist-strong: #315438;
+  --dusty-coal: #f8f7f5;
+  --matcha-mist: #d9600f;
+  --matcha-mist-strong: #b34e0c;
   --amber-spark: #b5762a;
-  --dark-accent: #dfe8e1;
+  --dark-accent: #ece5df;
   --card-bg: #ffffff;
-  --card-bg-raised: #fbfcfb;
+  --card-bg-raised: #fdfbfa;
   --text-primary: #17181a;
   --text-secondary: #5b615c;
-  --accent-glow: rgba(63, 106, 73, 0.1);
+  --accent-glow: rgba(217, 96, 15, 0.1);
   --border-color: rgba(0, 0, 0, 0.08);
   --border-color-strong: rgba(0, 0, 0, 0.15);
   --shadow-sm: 0 4px 14px rgba(23, 24, 26, 0.06);
   --shadow-md: 0 14px 32px rgba(23, 24, 26, 0.08);
   --shadow-lg: 0 24px 60px rgba(23, 24, 26, 0.12);
 
-  --aurora-1: rgba(63, 106, 73, 0.10);
+  --aurora-1: rgba(217, 96, 15, 0.10);
   --aurora-2: rgba(181, 118, 42, 0.08);
-  --aurora-3: rgba(63, 106, 73, 0.07);
+  --aurora-3: rgba(217, 96, 15, 0.07);
 }
 
 /* =========================================================
@@ -374,6 +374,18 @@ img {
   background: var(--accent-glow);
 }
 
+.nav-cta {
+  padding: 0.6rem 1.35rem;
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .nav-cta {
+    display: none;
+  }
+}
+
 /* =========================================================
    Hero Section & Decorative Blobs
 ========================================================= */
@@ -493,6 +505,10 @@ img {
   filter: drop-shadow(0 6px 18px var(--accent-glow));
 }
 
+.text-accent {
+  color: var(--matcha-mist);
+}
+
 .hero-role {
   min-height: 1.8rem;
   font-family: var(--font-display);
@@ -555,11 +571,19 @@ img {
   color: var(--matcha-mist);
 }
 
-.scroll-cue {
+.scroll-cue-wrap {
   position: absolute;
   bottom: 2.2rem;
   left: 50%;
   transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  z-index: 2;
+}
+
+.scroll-cue {
   width: 26px;
   height: 42px;
   border: 2px solid var(--border-color-strong);
@@ -567,7 +591,12 @@ img {
   display: flex;
   justify-content: center;
   padding-top: 8px;
-  z-index: 2;
+}
+
+.scroll-cue-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
 }
 
 .scroll-cue span {
@@ -585,7 +614,9 @@ img {
 }
 
 /* =========================================================
-   Hero Visual — floating code card
+   Hero Visual — circular portrait with orbiting tech badges
+   The photo src is a simple <img>, so it's a one-line swap:
+   just point images/hero-photo.jpg at your own photo.
 ========================================================= */
 .hero-visual {
   position: relative;
@@ -602,95 +633,94 @@ img {
   z-index: -1;
 }
 
-.code-card {
-  width: 100%;
-  max-width: 340px;
-  background: var(--card-bg-raised);
-  border: 1px solid var(--border-color-strong);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
-  overflow: hidden;
-  animation: cardFloat 6s ease-in-out infinite;
-  transform: rotate(1.5deg);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+.hero-photo-wrap {
+  position: relative;
+  width: min(100%, 380px);
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
 }
 
-.code-card:hover {
-  transform: rotate(0deg) translateY(-4px);
-  box-shadow: 0 30px 70px var(--accent-glow);
+.hero-photo-ring {
+  position: absolute;
+  inset: 6%;
+  border: 1.5px dashed var(--border-color-strong);
+  border-radius: 50%;
+  animation: ringSpin 40s linear infinite;
+}
+
+@keyframes ringSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.hero-photo-frame {
+  position: relative;
+  width: 82%;
+  height: 82%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--border-color-strong);
+  background:
+    radial-gradient(circle at 50% 40%, var(--accent-glow) 0%, transparent 65%),
+    var(--card-bg);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35), 0 0 0 14px var(--accent-glow);
+  animation: cardFloat 6s ease-in-out infinite;
+}
+
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @keyframes cardFloat {
-  0%, 100% { transform: rotate(1.5deg) translateY(0); }
-  50% { transform: rotate(1.5deg) translateY(-10px); }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
-.code-card-header {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.85rem 1rem;
-  background: var(--dark-accent);
-  border-bottom: 1px solid var(--border-color);
+.orbit-badge {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-sm);
+  background: var(--card-bg-raised);
+  border: 1px solid var(--border-color-strong);
+  color: var(--matcha-mist);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.75rem;
+  box-shadow: var(--shadow-md);
+  animation: badgeFloat 5s ease-in-out infinite;
 }
 
-.code-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  display: inline-block;
+.orbit-badge i {
+  font-size: 1.05rem;
 }
 
-.dot-red { background: #e0685c; }
-.dot-yellow { background: var(--amber-spark); }
-.dot-green { background: var(--matcha-mist); }
+.badge-code { top: 10%; left: 2%; animation-delay: 0s; }
+.badge-js   { top: 16%; right: -2%; animation-delay: 0.6s; }
+.badge-css  { bottom: 22%; left: -4%; animation-delay: 1.2s; }
+.badge-html { bottom: 6%; right: 6%; animation-delay: 1.8s; }
 
-.code-card-title {
-  margin-left: 0.4rem;
-  font-size: 0.78rem;
-  color: var(--text-secondary);
-  font-family: 'Sora', monospace;
-  letter-spacing: 0.02em;
+@keyframes badgeFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
-.code-card-body {
-  margin: 0;
-  padding: 1.2rem 1.3rem;
-  font-family: 'Courier New', ui-monospace, monospace;
-  font-size: 0.82rem;
-  line-height: 1.65;
-  color: var(--text-secondary);
-  overflow-x: auto;
-}
-
-.code-card-body .tok-key { color: var(--matcha-mist); }
-.code-card-body .tok-str { color: var(--amber-spark); }
-
-.code-card-status {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-  padding: 0.85rem 1.3rem;
-  border-top: 1px solid var(--border-color);
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.status-dot {
+.orbit-dot {
+  position: absolute;
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background: var(--matcha-mist);
-  box-shadow: 0 0 0 0 var(--accent-glow);
-  animation: statusPulse 2s ease infinite;
+  box-shadow: 0 0 12px 2px var(--accent-glow);
 }
 
-@keyframes statusPulse {
-  0% { box-shadow: 0 0 0 0 var(--accent-glow); }
-  70% { box-shadow: 0 0 0 8px transparent; }
-  100% { box-shadow: 0 0 0 0 transparent; }
-}
+.dot-a { top: 4%; right: 22%; }
+.dot-b { bottom: 30%; right: -2%; }
 
 @media (max-width: 900px) {
   .hero-grid {
@@ -704,7 +734,8 @@ img {
   }
 
   .hero-stack,
-  .hero-buttons {
+  .hero-buttons,
+  .hero-socials {
     justify-content: center;
   }
 
@@ -713,8 +744,13 @@ img {
     margin-bottom: 1rem;
   }
 
-  .code-card {
-    max-width: 300px;
+  .hero-photo-wrap {
+    width: min(100%, 300px);
+  }
+
+  .orbit-badge {
+    width: 40px;
+    height: 40px;
   }
 }
 
@@ -767,6 +803,32 @@ img {
   gap: 1rem;
 }
 
+.hero-socials {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.hero-socials a {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color-strong);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.hero-socials a:hover {
+  color: #17181a;
+  background: var(--matcha-mist);
+  border-color: var(--matcha-mist);
+  transform: translateY(-2px);
+}
+
 .btn-secondary i {
   transition: var(--transition-fast);
 }
@@ -814,6 +876,41 @@ img {
   align-items: center;
 }
 
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--matcha-mist);
+  font-size: 0.82rem;
+  margin-bottom: 0.75rem;
+}
+
+.eyebrow-dot {
+  font-size: 0.4rem;
+}
+
+.about-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.download-resume-btn {
+  background: linear-gradient(135deg, var(--matcha-mist), var(--matcha-mist-strong));
+  color: #17181a !important;
+  border: 1px solid var(--matcha-mist);
+  box-shadow: 0 10px 24px rgba(242, 113, 31, 0.22);
+}
+
+.download-resume-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(242, 113, 31, 0.3);
+}
+
 .about-img-container {
   position: relative;
   border-radius: var(--radius-md);
@@ -852,11 +949,26 @@ img {
 }
 
 .info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
   padding: 1rem 1.2rem;
   background: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
   font-size: 0.92rem;
+  transition: var(--transition-smooth);
+}
+
+.info-item:hover {
+  border-color: var(--border-color-strong);
+  transform: translateY(-2px);
+}
+
+.info-item i {
+  font-size: 1.15rem;
+  color: var(--matcha-mist);
+  flex-shrink: 0;
 }
 
 .info-item strong {
@@ -959,6 +1071,11 @@ img {
   border-radius: var(--radius-md);
 }
 
+.hero-photo-frame.media-error .hero-photo { display: none; }
+.hero-photo-frame .media-fallback {
+  border-radius: 50%;
+}
+
 /* =========================================================
    Netflix-Style Certificate Carousel
 ========================================================= */
@@ -1013,7 +1130,7 @@ img {
 .netflix-card:hover,
 .netflix-card:focus-within {
   transform: scale(1.08) translateY(-20px);
-  box-shadow: 0 20px 50px rgba(191, 224, 196, 0.35);
+  box-shadow: 0 20px 50px rgba(232, 122, 41, 0.35);
   z-index: 50;
 }
 
@@ -1100,11 +1217,11 @@ img {
 }
 
 .netflix-card-year {
-  background: rgba(191, 224, 196, 0.3);
+  background: rgba(232, 122, 41, 0.3);
   padding: 0.3rem 0.7rem;
   border-radius: 3px;
   font-weight: 600;
-  color: #eaf5ec;
+  color: #fdeee2;
 }
 
 .netflix-card-actions {
@@ -1136,7 +1253,7 @@ img {
 }
 
 .netflix-action-btn:hover {
-  background: rgba(191, 224, 196, 0.85);
+  background: rgba(232, 122, 41, 0.85);
   border-color: var(--matcha-mist);
   color: #17181a;
   transform: scale(1.15);
@@ -1304,7 +1421,7 @@ img {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(191, 224, 196, 0.1);
+  background: rgba(232, 122, 41, 0.1);
   color: var(--text-primary);
   cursor: pointer;
   z-index: 2;
@@ -1638,7 +1755,7 @@ img {
 .contact-section {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, rgba(191, 224, 196, 0.06) 0%, rgba(42, 49, 44, 0.07) 100%);
+  background: linear-gradient(135deg, rgba(232, 122, 41, 0.06) 0%, rgba(42, 49, 44, 0.07) 100%);
 }
 
 .contact-section::before {
@@ -1646,8 +1763,8 @@ img {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at top left, rgba(191, 224, 196, 0.18), transparent 32%),
-    radial-gradient(circle at bottom right, rgba(232, 185, 120, 0.14), transparent 35%);
+    radial-gradient(circle at top left, rgba(232, 122, 41, 0.16), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(255, 179, 71, 0.14), transparent 35%);
   pointer-events: none;
 }
 
@@ -1708,7 +1825,7 @@ img {
   font-weight: 600;
   font-size: 1rem;
   margin-top: 0.5rem;
-  box-shadow: 0 12px 24px rgba(63, 106, 73, 0.22);
+  box-shadow: 0 12px 24px rgba(232, 122, 41, 0.22);
 }
 
 .form-group {
@@ -1783,14 +1900,14 @@ img {
 
 .form-feedback.is-loading {
   color: var(--amber-spark);
-  border-color: rgba(232, 185, 120, 0.3);
-  background: rgba(232, 185, 120, 0.1);
+  border-color: rgba(255, 179, 71, 0.3);
+  background: rgba(255, 179, 71, 0.1);
 }
 
 .form-feedback.is-success {
-  color: #dff7e2;
-  border-color: rgba(159, 208, 168, 0.35);
-  background: rgba(159, 208, 168, 0.14);
+  color: #ffe9d6;
+  border-color: rgba(232, 122, 41, 0.35);
+  background: rgba(232, 122, 41, 0.14);
 }
 
 .form-feedback.is-error {
