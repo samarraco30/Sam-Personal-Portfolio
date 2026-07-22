@@ -31,7 +31,7 @@
   <!-- Navigation -->
   <nav class="navbar" aria-label="Primary">
     <div class="nav-container">
-      <a href="#home" class="logo">PORTFOLIO<span>.</span></a>
+      <a href="#home" class="logo">MSC<span>.</span></a>
       <ul class="nav-links" id="nav-links">
         <li><a href="#home" class="active">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -46,6 +46,7 @@
         <button id="theme-toggle" type="button" aria-label="Switch to light theme">
           <i class="fas fa-moon" aria-hidden="true"></i>
         </button>
+        <a href="#contact" class="btn btn-primary nav-cta">Let's Talk <i class="fas fa-paper-plane" aria-hidden="true"></i></a>
         <button class="menu-toggle" id="mobile-menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
           <span class="bar"></span>
           <span class="bar"></span>
@@ -67,8 +68,8 @@
     <div class="hero-container">
       <div class="hero-grid">
         <div class="hero-content">
-          <span class="subtitle reveal">Welcome to my portfolio</span>
-          <h1 class="reveal reveal-delay-1">Hi, I'm <span class="hero-name">Maria Samarra Co</span></h1>
+          <span class="subtitle reveal">Hello, I'm</span>
+          <h1 class="reveal reveal-delay-1">Maria Samarra <span class="hero-name">Co</span></h1>
           <p class="hero-role reveal reveal-delay-2">
             <span class="txt-type" data-wait="2200" data-words='["Fullstack Developer", "CS Student", "Problem Solver", "IoT Builder"]'></span>
           </p>
@@ -83,39 +84,41 @@
             <span class="stack-chip"><i class="fa-solid fa-database" aria-hidden="true"></i> SQL / MongoDB</span>
           </div>
           <div class="hero-buttons reveal reveal-delay-3">
-            <a href="#projects" class="btn btn-primary">View my work</a>
-            <a href="#contact" class="btn btn-secondary">Let's connect <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
+            <a href="#projects" class="btn btn-primary">View my work <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            <a href="files/RESUME.pdf" class="btn btn-secondary" download>Download CV <i class="fas fa-download" aria-hidden="true"></i></a>
+          </div>
+          <div class="hero-socials reveal reveal-delay-3" aria-label="Social links">
+            <a href="https://www.facebook.com/mariasamarra.co" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="https://linkedin.com/in/maria-samarra-co" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="https://github.com/samarraco30" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+            <a href="mailto:cosamarra30@email.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
           </div>
         </div>
 
-        <div class="hero-visual reveal reveal-right reveal-delay-2" aria-hidden="true">
-          <div class="code-card">
-            <div class="code-card-header">
-              <span class="code-dot dot-red"></span>
-              <span class="code-dot dot-yellow"></span>
-              <span class="code-dot dot-green"></span>
-              <span class="code-card-title">profile.json</span>
+        <div class="hero-visual reveal reveal-right reveal-delay-2">
+          <div class="hero-photo-wrap">
+            <div class="hero-photo-ring" aria-hidden="true"></div>
+            <div class="hero-photo-frame">
+              <!-- Replace this src with your own photo, e.g. images/hero-photo.jpg -->
+              <img src="images/sam.jpg" alt="Portrait of Maria Samarra Co" class="hero-photo" onerror="this.closest('.hero-photo-frame').classList.add('media-error')">
+              <div class="media-fallback"><i class="fas fa-user" aria-hidden="true"></i><span>Add hero-photo.jpg</span></div>
             </div>
-            <pre class="code-card-body"><code>{
-  <span class="tok-key">"name"</span>: <span class="tok-str">"Maria Samarra Co"</span>,
-  <span class="tok-key">"year"</span>: <span class="tok-str">"4th Year BSCS"</span>,
-  <span class="tok-key">"stack"</span>: [
-    <span class="tok-str">"React"</span>, <span class="tok-str">"Laravel"</span>,
-    <span class="tok-str">"Node.js"</span>, <span class="tok-str">"MongoDB"</span>
-  ],
-  <span class="tok-key">"status"</span>: <span class="tok-str">"open_to_work"</span>
-}</code></pre>
-            <div class="code-card-status">
-              <span class="status-dot"></span>
-              Available for internships
-            </div>
+            <span class="orbit-badge badge-code" aria-hidden="true"><i class="fas fa-code"></i></span>
+            <span class="orbit-badge badge-js" aria-hidden="true">JS</span>
+            <span class="orbit-badge badge-css" aria-hidden="true"><i class="fa-brands fa-css3-alt"></i></span>
+            <span class="orbit-badge badge-html" aria-hidden="true"><i class="fa-brands fa-html5"></i></span>
+            <span class="orbit-dot dot-a" aria-hidden="true"></span>
+            <span class="orbit-dot dot-b" aria-hidden="true"></span>
           </div>
         </div>
       </div>
     </div>
-    <a href="#about" class="scroll-cue" aria-label="Scroll to About section">
-      <span></span>
-    </a>
+    <div class="scroll-cue-wrap">
+      <a href="#about" class="scroll-cue" aria-label="Scroll to About section">
+        <span></span>
+      </a>
+      <span class="scroll-cue-label">Scroll Down</span>
+    </div>
   </header>
 
   <!-- About Section -->
@@ -131,11 +134,19 @@
           <div class="media-fallback"><i class="fas fa-user" aria-hidden="true"></i><span>Add profile.jpg</span></div>
         </div>
         <div class="about-text reveal reveal-right">
-          <h3>Passionate Developer &amp; Creator</h3>
+          <span class="eyebrow">About Me <i class="fas fa-circle eyebrow-dot" aria-hidden="true"></i></span>
+          <h3>Get to know me <span class="text-accent">better</span>.</h3>
           <p>I focus on bridging solid back-end architecture with fluid, interactive user interfaces. By keeping workflows visual and structure clean, I build products that are easy to navigate and simple to understand at a glance.</p>
           <div class="personal-info">
-            <div class="info-item"><strong>Location</strong> Santa Maria, Bulacan</div>
-            <div class="info-item"><strong>Availability</strong> Open to opportunities</div>
+            <div class="info-item"><i class="fas fa-graduation-cap" aria-hidden="true"></i><div><strong>Education</strong>BS Computer Science</div></div>
+            <div class="info-item"><i class="fas fa-location-dot" aria-hidden="true"></i><div><strong>Location</strong>Santa Maria, Bulacan</div></div>
+            <div class="info-item"><i class="fas fa-circle-check" aria-hidden="true"></i><div><strong>Availability</strong>Open to opportunities</div></div>
+          </div>
+          <div class="about-actions">
+            <a href="files/RESUME.pdf" class="btn btn-primary download-resume-btn" download aria-label="Download Maria Samarra Co resume">
+              <i class="fas fa-download" aria-hidden="true"></i>
+              <span>Download Resume</span>
+            </a>
           </div>
         </div>
       </div>
@@ -399,11 +410,12 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-inner">
-        <a href="#home" class="logo">PORTFOLIO<span>.</span></a>
+        <a href="#home" class="logo">MSC<span>.</span></a>
         <p>&copy; 2026 Maria Samarra Co. All rights reserved.</p>
         <div class="social-icons">
           <a href="https://github.com/samarraco30" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
           <a href="https://linkedin.com/in/maria-samarra-co" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+          <a href="https://www.facebook.com/mariasamarra.co" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
